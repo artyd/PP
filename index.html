@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новини ШІ: 20–27 жовтня 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&family=Unbounded:wght@500..800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#05070D;overflow:hidden;font-family:'Manrope',Arial,sans-serif}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;background:#05070D}
+.slide{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;visibility:hidden}
+.slide.active{visibility:visible}
+.slide h1,.slide h2,.slide h3,.slide p,.slide ul,.slide ol{margin:0}
+.slide h1{font-size:96px;font-weight:600;line-height:1.1}
+.slide h2{font-size:64px;font-weight:600;line-height:1.15}
+.slide h3{font-size:44px;font-weight:600;line-height:1.2}
+.slide p{font-size:32px;line-height:1.4}
+.slide hr{margin:0;border:0;width:100%}
+.slide .ico{display:block;flex:none}
+.slide .embed{display:block;background:transparent}
+.notes{display:none}
+/* slide transitions */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes pushInR{from{transform:translateX(100%)}to{transform:none}}
+@keyframes pushOutL{from{transform:none}to{transform:translateX(-100%)}}
+@keyframes pushInL{from{transform:translateX(-100%)}to{transform:none}}
+@keyframes pushOutR{from{transform:none}to{transform:translateX(100%)}}
+.t-fade-in{animation:fadeIn .7s ease both;z-index:2}
+.t-fade-out{animation:fadeOut .7s ease both;z-index:1}
+.t-push-in-f{animation:pushInR .7s cubic-bezier(.65,0,.35,1) both;z-index:2}
+.t-push-out-f{animation:pushOutL .7s cubic-bezier(.65,0,.35,1) both;z-index:1}
+.t-push-in-b{animation:pushInL .7s cubic-bezier(.65,0,.35,1) both;z-index:2}
+.t-push-out-b{animation:pushOutR .7s cubic-bezier(.65,0,.35,1) both;z-index:1}
+/* build-in animations */
+@keyframes b-fade{from{opacity:0}to{opacity:1}}
+@keyframes b-rise{from{opacity:0;translate:0 48px}to{opacity:1;translate:0 0}}
+@keyframes b-drop{from{opacity:0;translate:0 -48px}to{opacity:1;translate:0 0}}
+@keyframes b-left{from{opacity:0;translate:-90px 0}to{opacity:1;translate:0 0}}
+@keyframes b-right{from{opacity:0;translate:90px 0}to{opacity:1;translate:0 0}}
+@keyframes b-pop{0%{opacity:0;scale:.8}70%{opacity:1;scale:1.04}100%{opacity:1;scale:1}}
+@keyframes b-scale{from{opacity:0;scale:.6}to{opacity:1;scale:1}}
+.slide [data-build-in]{opacity:0}
+.slide.built [data-build-in]{animation-duration:.75s;animation-timing-function:cubic-bezier(.2,.8,.2,1);animation-fill-mode:both}
+/* UI */
+#bar{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,#3D5AFE,#FF7A1A);transition:width .5s ease;z-index:10}
+#ui{position:fixed;right:16px;bottom:14px;display:flex;gap:8px;align-items:center;z-index:11;opacity:.0;transition:opacity .3s}
+body:hover #ui{opacity:1}
+#ui button{font:600 14px Manrope,Arial,sans-serif;color:#E6EDF3;background:rgba(20,26,40,.75);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:8px 12px;cursor:pointer}
+#count{font:600 14px Manrope,Arial,sans-serif;color:#E6EDF3;background:rgba(20,26,40,.75);border-radius:8px;padding:8px 12px}
+#notes{position:fixed;left:16px;right:16px;bottom:24px;max-height:30vh;overflow:auto;background:rgba(10,14,24,.92);color:#E6EDF3;font:18px/1.5 Manrope,Arial,sans-serif;padding:18px 22px;border-radius:12px;border:1px solid rgba(255,255,255,.15);display:none;z-index:12}
+#hint{position:fixed;left:50%;top:20px;transform:translateX(-50%);background:rgba(10,14,24,.85);color:#E6EDF3;font:15px Manrope,Arial,sans-serif;padding:10px 18px;border-radius:999px;z-index:12;transition:opacity 1s}
+</style></head>
+<body>
+<div id="stage">
+<section class="slide" id="cover" data-transition="fade" style="background:linear-gradient(135deg, #F6F7FB 0%, #EAEFFC 100%);color:#121A33;font-family:'Manrope', Arial, sans-serif;padding:128px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:1040px;top:128px;width:752px;height:824px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;);let W,H,R=window.devicePixelRatio||1;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=44,P=[];for(let i=0;i&lt;N;i++)P.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0009,vy:(Math.random()-.5)*.0009,o:Math.random()&lt;.18,ph:Math.random()*6});
+function f(t){x.clearRect(0,0,W,H);const s=Math.min(W,H),L=s*.24;
+for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x&lt;.02||p.x&gt;.98)p.vx*=-1;if(p.y&lt;.02||p.y&gt;.98)p.vy*=-1}
+for(let i=0;i&lt;N;i++)for(let j=i+1;j&lt;N;j++){const a=P[i],b=P[j],dx=(a.x-b.x)*W,dy=(a.y-b.y)*H,d=Math.hypot(dx,dy);if(d&lt;L){x.strokeStyle=&#x27;rgba(61,90,254,&#x27;+((1-d/L)*.4).toFixed(3)+&#x27;)&#x27;;x.lineWidth=1.4*R;x.beginPath();x.moveTo(a.x*W,a.y*H);x.lineTo(b.x*W,b.y*H);x.stroke()}}
+for(const p of P){const k=p.o?5+2.5*Math.sin(t/320+p.ph):3.2;if(p.o){x.fillStyle=&#x27;rgba(255,122,26,.18)&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,k*3.2*R,0,7);x.fill()}x.fillStyle=p.o?&#x27;#FF7A1A&#x27;:&#x27;#3D5AFE&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,k*1.5*R,0,7);x.fill()}
+requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p data-build-in="fade 1 auto" style="position:absolute;left:128px;top:200px;width:880px;font-size:26px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#3D5AFE">Дайджест · тиждень 43</p>
+<h1 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:260px;width:880px;font-family:'Manrope', Arial, sans-serif;font-size:104px;font-weight:800;line-height:1.05;letter-spacing:-2px;color:#121A33">Новини штучного інтелекту</h1>
+<p data-build-in="rise 3 auto" style="position:absolute;left:128px;top:600px;width:880px;font-family:'Unbounded', Verdana, sans-serif;font-size:56px;font-weight:700;color:#C2410C">20–27 жовтня 2026</p>
+<p data-build-in="fade 4 auto" style="position:absolute;left:128px;top:720px;width:820px;font-size:32px;line-height:1.4;color:#4A5368">10 головних подій тижня та 5 репозиторіїв GitHub, які вибухнули зірками</p>
+<aside class="notes">Вітаю! Це короткий огляд найважливішого у світі штучного інтелекту за тиждень 20–27 жовтня 2026 року (дані зібрано станом на 26 жовтня). Спочатку — 10 новин у чотирьох темах: моделі, бізнес, безпека й регулювання, практика. Потім — п’ять проєктів на GitHub, які за тиждень набрали найбільше зірок завдяки своїй технології.</aside>
+</section>
+
+<section class="slide" id="agenda" data-transition="push" style="background:#F6F7FB;color:#121A33;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<p data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1200px;font-size:26px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#3D5AFE">План огляду</p>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:180px;width:1664px;font-size:72px;font-weight:800;line-height:1.1;color:#121A33">Про що поговоримо</h2>
+<div data-build-in="pop 3 auto" style="position:absolute;left:128px;top:380px;width:313px;height:460px;display:flex;flex-direction:column;gap:20px;background:#FCFCFE;border-top:8px solid #3D5AFE;border-radius:20px;padding:36px 32px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:44px;font-weight:700;color:#3D5AFE">01–03</p>
+<h3 style="font-size:32px;font-weight:800;line-height:1.2;color:#121A33">Моделі та продукти</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A5368">Claude Duet, Kimi K3.1 Pro, Mistral Voxtral 3</p>
+</div>
+<div data-build-in="pop 4 auto" style="position:absolute;left:465px;top:380px;width:313px;height:460px;display:flex;flex-direction:column;gap:20px;background:#FCFCFE;border-top:8px solid #087563;border-radius:20px;padding:36px 32px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:44px;font-weight:700;color:#087563">04–06</p>
+<h3 style="font-size:32px;font-weight:800;line-height:1.2;color:#121A33">Бізнес і угоди</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A5368">OpenAI у Google Cloud, Nvidia в Берліні, Orchestra Bio</p>
+</div>
+<div data-build-in="pop 5 auto" style="position:absolute;left:802px;top:380px;width:313px;height:460px;display:flex;flex-direction:column;gap:20px;background:#FCFCFE;border-top:8px solid #C2410C;border-radius:20px;padding:36px 32px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:44px;font-weight:700;color:#C2410C">07–09</p>
+<h3 style="font-size:32px;font-weight:800;line-height:1.2;color:#121A33">Безпека і регулювання</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A5368">Діри в PHP, обмеження реверс-інжинірингу, правила США</p>
+</div>
+<div data-build-in="pop 6 auto" style="position:absolute;left:1139px;top:380px;width:313px;height:460px;display:flex;flex-direction:column;gap:20px;background:#FCFCFE;border-top:8px solid #6D28D9;border-radius:20px;padding:36px 32px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:44px;font-weight:700;color:#6D28D9">10–11</p>
+<h3 style="font-size:32px;font-weight:800;line-height:1.2;color:#121A33">Практика і відкритий код</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A5368">Заблоковані чати ChatGPT, DeepSeek DeepInfer</p>
+</div>
+<div data-build-in="pop 7 auto" style="position:absolute;left:1476px;top:380px;width:316px;height:460px;display:flex;flex-direction:column;gap:20px;background:#121A33;border-top:8px solid #FF7A1A;border-radius:20px;padding:36px 32px;box-shadow:0 12px 32px rgba(18,26,51,0.16)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:44px;font-weight:700;color:#FFB37A">Top 5</p>
+<h3 style="font-size:32px;font-weight:800;line-height:1.2;color:#F3F5FB">GitHub: зірки тижня</h3>
+<p style="font-size:24px;line-height:1.4;color:#B9C2DA">Репозиторії з найбільшим приростом зірок</p>
+</div>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#6B7385">2</p>
+<aside class="notes">Огляд складається з п’яти блоків. Чотири тематичні блоки новин — моделі та продукти, бізнес і угоди, безпека і регулювання, практика й відкритий код. П’ятий блок — п’ять GitHub-репозиторіїв, які за тиждень набрали найбільше зірок.</aside>
+</section>
+
+<section class="slide" id="numbers" data-transition="push" style="background:#EEF1F8;color:#121A33;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<p data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1200px;font-size:26px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#3D5AFE">Коротко</p>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:180px;width:1664px;font-size:72px;font-weight:800;line-height:1.1;color:#121A33">Тиждень у цифрах</h2>
+<div data-build-in="pop 3 auto" style="position:absolute;left:128px;top:330px;width:816px;height:270px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#FCFCFE;border-left:10px solid #3D5AFE;border-radius:20px;padding:40px 48px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:84px;font-weight:700;line-height:1.1;color:#3D5AFE">6 000+</p>
+<p style="font-size:30px;line-height:1.35;color:#2B3448">застосунків підключає новий агент Claude Duet</p>
+</div>
+<div data-build-in="pop 4 auto" style="position:absolute;left:976px;top:330px;width:816px;height:270px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#FCFCFE;border-left:10px solid #3D5AFE;border-radius:20px;padding:40px 48px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:84px;font-weight:700;line-height:1.1;color:#3D5AFE">2,8 трлн</p>
+<p style="font-size:30px;line-height:1.35;color:#2B3448">параметрів у китайській моделі Kimi K3.1 Pro</p>
+</div>
+<div data-build-in="pop 5 auto" style="position:absolute;left:128px;top:632px;width:816px;height:270px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#FCFCFE;border-left:10px solid #087563;border-radius:20px;padding:40px 48px;box-shadow:0 12px 32px rgba(18,26,51,0.08)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:84px;font-weight:700;line-height:1.1;color:#087563">14 днів</p>
+<p style="font-size:30px;line-height:1.35;color:#2B3448">щоб розгорнути дата-центр Nvidia DSX Pod</p>
+</div>
+<div data-build-in="pop 6 auto" style="position:absolute;left:976px;top:632px;width:816px;height:270px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#121A33;border-left:10px solid #FF7A1A;border-radius:20px;padding:40px 48px;box-shadow:0 12px 32px rgba(18,26,51,0.16)">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:84px;font-weight:700;line-height:1.1;color:#FFB37A">+55,9 тис.</p>
+<p style="font-size:30px;line-height:1.35;color:#D5DBEA">зірок у REA — інструменту, який почали обмежувати</p>
+</div>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#6B7385">3</p>
+<aside class="notes">Чотири цифри тижня. 6 000+ — стільки застосунків можна підключити до нового фонового агента Anthropic. 2,8 трильйона параметрів — розмір нової китайської моделі Kimi K3.1 Pro. 14 днів — стільки, за словами Nvidia, займає розгортання модульного дата-центру DSX Pod замість півроку. І +55,9 тисячі зірок за тиждень — рекорд GitHub-проєкту REA, про який поговоримо в кінці.</aside>
+</section>
+
+<section class="slide" id="m01" data-transition="push" style="background:linear-gradient(135deg, #1E2A78 0%, #3D5AFE 100%);color:#F4F6FF;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=60,P=[];for(let i=0;i&lt;N;i++)P.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0005,vy:(Math.random()-.5)*.0005,ph:Math.random()*6});
+function f(t){x.clearRect(0,0,W,H);const L=Math.min(W,H)*.2;
+for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x&lt;0||p.x&gt;1)p.vx*=-1;if(p.y&lt;0||p.y&gt;1)p.vy*=-1}
+for(let i=0;i&lt;N;i++)for(let j=i+1;j&lt;N;j++){const a=P[i],b=P[j],d=Math.hypot((a.x-b.x)*W,(a.y-b.y)*H);if(d&lt;L){x.strokeStyle=&#x27;rgba(255,255,255,&#x27;+((1-d/L)*.16).toFixed(3)+&#x27;)&#x27;;x.lineWidth=1.2*R;x.beginPath();x.moveTo(a.x*W,a.y*H);x.lineTo(b.x*W,b.y*H);x.stroke()}}
+for(const p of P){x.fillStyle=&#x27;rgba(255,255,255,&#x27;+(.25+.2*Math.sin(t/500+p.ph)).toFixed(3)+&#x27;)&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,3*R,0,7);x.fill()}
+requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1E2A78;background:#F4F6FF;padding:8px 22px;border-radius:999px">Моделі та продукти</p>
+<p style="font-size:26px;font-weight:600;color:#DDE3FF">21 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#F4F6FF">01 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#FFFFFF">Anthropic запустила Claude Duet — ШІ-агента, який працює у фоні</h2>
+<div data-build-in="left 3 auto" style="position:absolute;left:128px;top:390px;width:1000px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Щоранку надсилає бриф про головне з пошти, календаря та робочих застосунків</p>
+</div>
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Сам виконує завдання — від зустрічей до прогнозів продажів і дашбордів; працює на Opus 5.5</p>
+</div>
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Перед оплатою, підписанням чи видаленням обов’язково питає дозволу</p>
+</div>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:1180px;top:390px;width:612px;display:flex;flex-direction:column;gap:16px;background:rgba(10,16,70,0.38);border:1px solid rgba(255,255,255,0.22);border-radius:28px;padding:44px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:72px;font-weight:700;line-height:1.1;color:#FFFFFF">6 000+</p>
+<p style="font-size:24px;line-height:1.4;color:#DDE3FF">застосунків можна підключити</p>
+<hr style="border-top:2px solid rgba(255,255,255,0.25)">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFD166">Чому це важливо</p>
+<p style="font-size:26px;line-height:1.4;color:#F4F6FF">Гонка персональних агентів: конкуренти — OpenAI Dots, Meta Muse і Gemini Spark. Доступ поки за листом очікування.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#EEF1FF">Джерела: thurrott.com, iphoneincanada.ca</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#EEF1FF">4</p>
+<aside class="notes">21 жовтня Anthropic представила Claude Duet — окремий застосунок-агент для iPhone, Android і вебу. Він щоранку надсилає бриф, протягом дня стежить за підключеними сервісами й сповіщає лише про важливе, а також сам виконує доручення. Для чутливих дій — оплата, підписання, видалення — потрібне підтвердження. Це дослідний прев’ю за листом очікування для підписників Pro і Max. Джерела: https://thurrott.com/a-i/anthropic/343121/anthropic-announces-claude-duet-a-personal-ai-agent ; https://iphoneincanada.ca/2026/10/21/claude-duet-proactive-ai-agent-app</aside>
+</section>
+
+<section class="slide" id="m02" data-transition="push" style="background:linear-gradient(135deg, #1E2A78 0%, #3D5AFE 100%);color:#F4F6FF;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=60,P=[];for(let i=0;i&lt;N;i++)P.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0005,vy:(Math.random()-.5)*.0005,ph:Math.random()*6});
+function f(t){x.clearRect(0,0,W,H);const L=Math.min(W,H)*.2;
+for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x&lt;0||p.x&gt;1)p.vx*=-1;if(p.y&lt;0||p.y&gt;1)p.vy*=-1}
+for(let i=0;i&lt;N;i++)for(let j=i+1;j&lt;N;j++){const a=P[i],b=P[j],d=Math.hypot((a.x-b.x)*W,(a.y-b.y)*H);if(d&lt;L){x.strokeStyle=&#x27;rgba(255,255,255,&#x27;+((1-d/L)*.16).toFixed(3)+&#x27;)&#x27;;x.lineWidth=1.2*R;x.beginPath();x.moveTo(a.x*W,a.y*H);x.lineTo(b.x*W,b.y*H);x.stroke()}}
+for(const p of P){x.fillStyle=&#x27;rgba(255,255,255,&#x27;+(.25+.2*Math.sin(t/500+p.ph)).toFixed(3)+&#x27;)&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,3*R,0,7);x.fill()}
+requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1E2A78;background:#F4F6FF;padding:8px 22px;border-radius:999px">Моделі та продукти</p>
+<p style="font-size:26px;font-weight:600;color:#DDE3FF">23 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#F4F6FF">02 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#FFFFFF">Kimi K3.1 Pro: найсильніша модель Китаю, відкриті ваги — до 4 листопада</h2>
+<div data-build-in="left 3 auto" style="position:absolute;left:128px;top:390px;width:1000px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Архітектура MoE: 2,8 трлн параметрів (104 млрд активних), контекст до 1 млн токенів</p>
+</div>
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">55 балів в індексі Artificial Analysis — лише на 3 бали менше, ніж у Claude Opus 5.5</p>
+</div>
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">API на третину дешевший за K3: $2 за 1 млн вхідних і $10 за 1 млн вихідних токенів</p>
+</div>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:1180px;top:390px;width:612px;display:flex;flex-direction:column;gap:16px;background:rgba(10,16,70,0.38);border:1px solid rgba(255,255,255,0.22);border-radius:28px;padding:44px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:72px;font-weight:700;line-height:1.1;color:#FFFFFF">2,8 трлн</p>
+<p style="font-size:24px;line-height:1.4;color:#DDE3FF">параметрів у моделі від Moonshot AI</p>
+<hr style="border-top:2px solid rgba(255,255,255,0.25)">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFD166">Чому це важливо</p>
+<p style="font-size:26px;line-height:1.4;color:#F4F6FF">Відкриті моделі з Китаю майже наздогнали флагмани США — і коштують у рази дешевше. Ліцензію ще не оголошено.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#EEF1FF">Джерела: yottalabs.ai, Artificial Analysis (через willk30.substack.com)</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#EEF1FF">5</p>
+<aside class="notes">23 жовтня китайська Moonshot AI випустила Kimi K3.1 Pro — допрацьовану версію Kimi K3. 2,8 трильйона параметрів, з яких на кожен токен працюють 104 мільярди; контекст — мільйон токенів, на вхід приймає текст і зображення. У незалежному індексі Artificial Analysis — 55 балів, четверте місце; у Claude Opus 5.5 — 58. Решта бенчмарків — дані самої Moonshot. Відкриті ваги обіцяють до 4 листопада. Джерело: https://www.yottalabs.ai/post/kimi-k3-1-pro-specs-price-open-weights-benchmarks</aside>
+</section>
+
+<section class="slide" id="m03" data-transition="fade" style="background:linear-gradient(135deg, #1E2A78 0%, #3D5AFE 100%);color:#F4F6FF;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=60,P=[];for(let i=0;i&lt;N;i++)P.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0005,vy:(Math.random()-.5)*.0005,ph:Math.random()*6});
+function f(t){x.clearRect(0,0,W,H);const L=Math.min(W,H)*.2;
+for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x&lt;0||p.x&gt;1)p.vx*=-1;if(p.y&lt;0||p.y&gt;1)p.vy*=-1}
+for(let i=0;i&lt;N;i++)for(let j=i+1;j&lt;N;j++){const a=P[i],b=P[j],d=Math.hypot((a.x-b.x)*W,(a.y-b.y)*H);if(d&lt;L){x.strokeStyle=&#x27;rgba(255,255,255,&#x27;+((1-d/L)*.16).toFixed(3)+&#x27;)&#x27;;x.lineWidth=1.2*R;x.beginPath();x.moveTo(a.x*W,a.y*H);x.lineTo(b.x*W,b.y*H);x.stroke()}}
+for(const p of P){x.fillStyle=&#x27;rgba(255,255,255,&#x27;+(.25+.2*Math.sin(t/500+p.ph)).toFixed(3)+&#x27;)&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,3*R,0,7);x.fill()}
+requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1E2A78;background:#F4F6FF;padding:8px 22px;border-radius:999px">Моделі та продукти</p>
+<p style="font-size:26px;font-weight:600;color:#DDE3FF">22 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#F4F6FF">03 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#FFFFFF">Mistral Voxtral 3: голосові моделі та SDK для агентів, що розмовляють</h2>
+<div data-build-in="left 3 auto" style="position:absolute;left:128px;top:390px;width:1000px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Розпізнавання мовлення 50+ мовами, синтез голосу — 35+ мовами; українська є в переліку</p>
+</div>
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Голосовий агент відповідає швидше ніж за секунду і замовкає, коли його перебивають</p>
+</div>
+<div style="display:flex;gap:20px;align-items:center;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:22px 28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#F4F6FF;border-radius:50%"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3D5AFE;width:30px;height:30px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#F4F6FF">Підключається до телефонії та застосунків; хостинг в ЄС або на власних серверах</p>
+</div>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:1180px;top:390px;width:612px;display:flex;flex-direction:column;gap:16px;background:rgba(10,16,70,0.38);border:1px solid rgba(255,255,255,0.22);border-radius:28px;padding:44px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:72px;font-weight:700;line-height:1.1;color:#FFFFFF">$0,0035</p>
+<p style="font-size:24px;line-height:1.4;color:#DDE3FF">за хвилину розпізнавання мовлення</p>
+<hr style="border-top:2px solid rgba(255,255,255,0.25)">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFD166">Чому це важливо</p>
+<p style="font-size:26px;line-height:1.4;color:#F4F6FF">Європейська альтернатива для кол-центрів і голосових помічників: дані можна тримати в ЄС, що важливо для GDPR.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#EEF1FF">Джерело: mistral.ai/news/voxtral-3</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#EEF1FF">6</p>
+<aside class="notes">Французька Mistral випустила лінійку Voxtral 3: моделі транскрипції (пакетна і в реальному часі із затримкою до пів секунди), синтез мовлення та SDK для голосових агентів на базі LiveKit. Ціни: від $0,0035 за хвилину транскрипції, голосовий агент — від $0,04 за хвилину. Українська мова є і в бібліотеці голосів, і в тестах транскрипції. Джерело: https://mistral.ai/news/voxtral-3/</aside>
+</section>
+
+<section class="slide" id="b04" data-transition="push" style="background:#F7F4EC;color:#14211E;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="left 1 auto" style="position:absolute;left:0px;top:0px;width:720px;height:1080px;background:linear-gradient(160deg, #0B6B5C 0%, #064E43 100%)"></div>
+<div data-build-in="fade 2 auto" style="position:absolute;left:128px;top:128px;width:500px;display:flex;align-items:center;gap:16px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1B1A16;background:#F2C14E;padding:8px 20px;border-radius:999px">Бізнес і угоди</p>
+<p style="font-size:26px;font-weight:600;color:#CFEDE6">21 жовтня</p>
+</div>
+<p data-build-in="fade 2 auto" style="position:absolute;left:128px;top:204px;width:400px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#9FD8CB">04 / 11</p>
+<svg data-build-in="pop 3 auto" class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:128px;top:340px;width:112px;height:112px;color:#F2C14E"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+<p data-build-in="scale 4 auto" style="position:absolute;left:128px;top:490px;width:540px;font-family:'Unbounded', Verdana, sans-serif;font-size:96px;font-weight:700;line-height:1.1;color:#FDFBF5">3 з 3</p>
+<p data-build-in="fade 5 auto" style="position:absolute;left:128px;top:620px;width:480px;font-size:30px;line-height:1.4;color:#CFEDE6">найбільших хмар США тепер продають моделі OpenAI</p>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:128px;top:780px;width:480px;height:140px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=12,B=[];for(let i=0;i&lt;N;i++)B.push(.2+.75*(i/(N-1))*(.7+.3*Math.random()));
+function f(t){x.clearRect(0,0,W,H);const p=(t%6000)/6000,k=Math.min(1,p*1.6),bw=W/N;x.globalAlpha=p&gt;.85?1-(p-.85)/.15:1;
+for(let i=0;i&lt;N;i++){const g=Math.max(0,Math.min(1,k*N-i)),h=B[i]*H*.85*g;x.fillStyle=&#x27;rgba(159,216,203,.35)&#x27;;x.fillRect(i*bw+bw*.18,H-h,bw*.64,h)}
+const m=Math.max(0,Math.min(N-1,Math.floor(k*N)-1));x.strokeStyle=&#x27;#F2C14E&#x27;;x.lineWidth=3*R;x.beginPath();for(let i=0;i&lt;=m;i++){const X=i*bw+bw/2,Y=H-B[i]*H*.85-6*R;i?x.lineTo(X,Y):x.moveTo(X,Y)}x.stroke();
+x.fillStyle=&#x27;#F2C14E&#x27;;x.beginPath();x.arc(m*bw+bw/2,H-B[m]*H*.85-6*R,6*R,0,7);x.fill();x.globalAlpha=1;requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<h2 data-build-in="rise 3 auto" style="position:absolute;left:800px;top:128px;width:992px;font-size:56px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#14211E">Моделі OpenAI з’явилися в Google Cloud — у хмарі головного конкурента</h2>
+<div data-build-in="rise 4 auto" style="position:absolute;left:800px;top:370px;width:992px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna та агент Codex — у приватному прев’ю Google Model Garden</p></div>
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">Тепер OpenAI є в усіх трьох найбільших хмарах США: Microsoft Azure, AWS і Google Cloud</p></div>
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">Google обіцяє: запити й відповіді клієнтів лишаються в їхньому контурі й не йдуть на навчання</p></div>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:800px;top:700px;width:992px;display:flex;flex-direction:column;gap:10px;background:#E6F2EE;border-left:8px solid #087563;border-radius:20px;padding:30px 36px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#087563">Чому це важливо</p>
+<p style="font-size:26px;line-height:1.4;color:#14211E">Ексклюзивність Microsoft закінчилася. Бізнес може обирати модель, не змінюючи хмару й договори.</p>
+</div>
+<p style="position:absolute;left:800px;bottom:64px;width:900px;font-size:24px;color:#5F6660">Джерело: thenextweb.com</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#5F6660">7</p>
+<aside class="notes">21 жовтня OpenAI і Google Cloud оголосили партнерство: моделі GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna та агент Codex доступні в приватному прев’ю, загальний доступ — у найближчі тижні. Оплата — через Google Cloud Marketplace, в одному рахунку. Microsoft лишається основним хмарним партнером OpenAI, але її ексклюзивна ліцензія завершилась; AWS розміщує моделі OpenAI з квітня. Джерело: https://thenextweb.com/news/openai-models-codex-google-cloud</aside>
+</section>
+
+<section class="slide" id="b05" data-transition="push" style="background:#F7F4EC;color:#14211E;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="left 1 auto" style="position:absolute;left:0px;top:0px;width:720px;height:1080px;background:linear-gradient(160deg, #0B6B5C 0%, #064E43 100%)"></div>
+<div data-build-in="fade 2 auto" style="position:absolute;left:128px;top:128px;width:500px;display:flex;align-items:center;gap:16px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1B1A16;background:#F2C14E;padding:8px 20px;border-radius:999px">Бізнес і угоди</p>
+<p style="font-size:26px;font-weight:600;color:#CFEDE6">21 жовтня</p>
+</div>
+<p data-build-in="fade 2 auto" style="position:absolute;left:128px;top:204px;width:400px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#9FD8CB">05 / 11</p>
+<svg data-build-in="pop 3 auto" class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:128px;top:340px;width:112px;height:112px;color:#F2C14E"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+<p data-build-in="scale 4 auto" style="position:absolute;left:128px;top:490px;width:540px;font-family:'Unbounded', Verdana, sans-serif;font-size:84px;font-weight:700;line-height:1.1;color:#FDFBF5">14 днів</p>
+<p data-build-in="fade 5 auto" style="position:absolute;left:128px;top:620px;width:480px;font-size:30px;line-height:1.4;color:#CFEDE6">замість ≈6 місяців на розгортання дата-центру</p>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:128px;top:780px;width:480px;height:140px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=12,B=[];for(let i=0;i&lt;N;i++)B.push(.2+.75*(i/(N-1))*(.7+.3*Math.random()));
+function f(t){x.clearRect(0,0,W,H);const p=(t%6000)/6000,k=Math.min(1,p*1.6),bw=W/N;x.globalAlpha=p&gt;.85?1-(p-.85)/.15:1;
+for(let i=0;i&lt;N;i++){const g=Math.max(0,Math.min(1,k*N-i)),h=B[i]*H*.85*g;x.fillStyle=&#x27;rgba(159,216,203,.35)&#x27;;x.fillRect(i*bw+bw*.18,H-h,bw*.64,h)}
+const m=Math.max(0,Math.min(N-1,Math.floor(k*N)-1));x.strokeStyle=&#x27;#F2C14E&#x27;;x.lineWidth=3*R;x.beginPath();for(let i=0;i&lt;=m;i++){const X=i*bw+bw/2,Y=H-B[i]*H*.85-6*R;i?x.lineTo(X,Y):x.moveTo(X,Y)}x.stroke();
+x.fillStyle=&#x27;#F2C14E&#x27;;x.beginPath();x.arc(m*bw+bw/2,H-B[m]*H*.85-6*R,6*R,0,7);x.fill();x.globalAlpha=1;requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<h2 data-build-in="rise 3 auto" style="position:absolute;left:800px;top:128px;width:992px;font-size:56px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#14211E">Nvidia на GTC Berlin: дата-центр «під ключ» за 14 днів для Європи</h2>
+<div data-build-in="rise 4 auto" style="position:absolute;left:800px;top:370px;width:992px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">DSX Pod — модульний ЦОД на архітектурі Vera Rubin у контейнерах; продажі з початку 2027 року</p></div>
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">За словами Дженсена Хуанга, Європа має ≈5% світових обчислень для ШІ, а США — ≈75%</p></div>
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">Партнерства з Siemens, Mercedes-Benz, Audi, Porsche; Bolt планує 25 000 авто на платформі Nvidia</p></div>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:800px;top:700px;width:992px;display:flex;flex-direction:column;gap:10px;background:#E6F2EE;border-left:8px solid #087563;border-radius:20px;padding:30px 36px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#087563">Чому це важливо</p>
+<p style="font-size:26px;line-height:1.4;color:#14211E">Головне обмеження ШІ — швидкість будівництва дата-центрів. Nvidia продає вже не чипи, а цілі «фабрики ШІ».</p>
+</div>
+<p style="position:absolute;left:800px;bottom:64px;width:900px;font-size:24px;color:#5F6660">Джерела: borncity.com, baxtel.com</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#5F6660">8</p>
+<aside class="notes">21 жовтня на GTC Berlin Дженсен Хуанг виступив перед ≈4 000 учасників і закликав Європу швидше впроваджувати ШІ. Головний анонс — DSX Pod: еталонний модульний дата-центр, який збирають на заводі в контейнерах; на підготовленому майданчику його можна запустити за 14 днів замість шести місяців. Продажі — з початку 2027 через Dell, HPE, Lenovo, Foxconn і Schneider Electric. Цікава деталь: три з чотирьох маленьких роботів на сцені впали. Джерело: https://borncity.com/news/nvidia-in-europa-dsx-pod-soll-rechenzentren-in-14-tagen-bereitstellen/</aside>
+</section>
+
+<section class="slide" id="b06" data-transition="fade" style="background:#F7F4EC;color:#14211E;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="left 1 auto" style="position:absolute;left:0px;top:0px;width:720px;height:1080px;background:linear-gradient(160deg, #0B6B5C 0%, #064E43 100%)"></div>
+<div data-build-in="fade 2 auto" style="position:absolute;left:128px;top:128px;width:500px;display:flex;align-items:center;gap:16px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1B1A16;background:#F2C14E;padding:8px 20px;border-radius:999px">Бізнес і угоди</p>
+<p style="font-size:26px;font-weight:600;color:#CFEDE6">20 жовтня</p>
+</div>
+<p data-build-in="fade 2 auto" style="position:absolute;left:128px;top:204px;width:400px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#9FD8CB">06 / 11</p>
+<svg data-build-in="pop 3 auto" class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:128px;top:340px;width:112px;height:112px;color:#F2C14E"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+<p data-build-in="scale 4 auto" style="position:absolute;left:128px;top:490px;width:540px;font-family:'Unbounded', Verdana, sans-serif;font-size:96px;font-weight:700;line-height:1.1;color:#FDFBF5">32 хв</p>
+<p data-build-in="fade 5 auto" style="position:absolute;left:128px;top:620px;width:480px;font-size:30px;line-height:1.4;color:#CFEDE6">на аналіз даних мільйонів клітин мозку агентами GPT-Rosalind</p>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:128px;top:780px;width:480px;height:140px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=12,B=[];for(let i=0;i&lt;N;i++)B.push(.2+.75*(i/(N-1))*(.7+.3*Math.random()));
+function f(t){x.clearRect(0,0,W,H);const p=(t%6000)/6000,k=Math.min(1,p*1.6),bw=W/N;x.globalAlpha=p&gt;.85?1-(p-.85)/.15:1;
+for(let i=0;i&lt;N;i++){const g=Math.max(0,Math.min(1,k*N-i)),h=B[i]*H*.85*g;x.fillStyle=&#x27;rgba(159,216,203,.35)&#x27;;x.fillRect(i*bw+bw*.18,H-h,bw*.64,h)}
+const m=Math.max(0,Math.min(N-1,Math.floor(k*N)-1));x.strokeStyle=&#x27;#F2C14E&#x27;;x.lineWidth=3*R;x.beginPath();for(let i=0;i&lt;=m;i++){const X=i*bw+bw/2,Y=H-B[i]*H*.85-6*R;i?x.lineTo(X,Y):x.moveTo(X,Y)}x.stroke();
+x.fillStyle=&#x27;#F2C14E&#x27;;x.beginPath();x.arc(m*bw+bw/2,H-B[m]*H*.85-6*R,6*R,0,7);x.fill();x.globalAlpha=1;requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<h2 data-build-in="rise 3 auto" style="position:absolute;left:800px;top:128px;width:992px;font-size:56px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#14211E">OpenAI купує Orchestra Bio — ШІ-агентів для розробки ліків</h2>
+<div data-build-in="rise 4 auto" style="position:absolute;left:800px;top:370px;width:992px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">Агенти стежать за клінічними дослідженнями, термінами й бюджетом і попереджають про зриви</p></div>
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">Технологію вбудують у Rosalind — набір ШІ-інструментів OpenAI для біології та фармації</p></div>
+<div style="display:flex;gap:20px;align-items:start"><svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#087563;width:36px;height:36px"><polyline points="20 6 9 17 4 12"/></svg><p style="flex:1;font-size:28px;line-height:1.4;color:#2B3430">Сума угоди не розкривається; до покупки стартап залучив близько $20 млн інвестицій</p></div>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:800px;top:700px;width:992px;display:flex;flex-direction:column;gap:10px;background:#E6F2EE;border-left:8px solid #087563;border-radius:20px;padding:30px 36px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#087563">Чому це важливо</p>
+<p style="font-size:26px;line-height:1.4;color:#14211E">Фарма — один із головних напрямів ШІ-угод. За повідомленнями, Anthropic раніше купила Coefficient Bio за ~$400 млн.</p>
+</div>
+<p style="position:absolute;left:800px;bottom:64px;width:900px;font-size:24px;color:#5F6660">Джерела: techstrong.ai, willk30.substack.com</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#5F6660">9</p>
+<aside class="notes">OpenAI придбала Orchestra Bio — стартап 2022 року, що робить платформу для координації розробки ліків. Приклад з анонсу: зіпсована виробнича партія затримує клінічне дослідження, а агенти показують, які роботи й терміни це зачепить. Сума угоди не розкривається; Orchestra залучала близько $20 млн. Того ж тижня тисячі агентів GPT-Rosalind разом зі Scripps Research за 32 хвилини проаналізували дані мільйонів клітин мозку миші. Джерело: https://techstrong.ai/articles/openai-acquires-orchestra-bio/</aside>
+</section>
+
+<section class="slide" id="s07" data-transition="push" style="background:#1A1D24;color:#F5F2EE;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:20px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:#1A1D24&quot;&gt;&lt;div style=&quot;position:absolute;left:-136px;top:0;width:2200px;height:20px;background:repeating-linear-gradient(45deg,#FB923C 0 24px,#1A1D24 24px 48px);animation:m 1.2s linear infinite&quot;&gt;&lt;/div&gt;&lt;style&gt;@keyframes m{to{transform:translateX(67.88px)}}&lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:1060px;width:1920px;height:20px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:#1A1D24&quot;&gt;&lt;div style=&quot;position:absolute;left:-136px;top:0;width:2200px;height:20px;background:repeating-linear-gradient(45deg,#FB923C 0 24px,#1A1D24 24px 48px);animation:m 1.2s linear infinite reverse&quot;&gt;&lt;/div&gt;&lt;style&gt;@keyframes m{to{transform:translateX(67.88px)}}&lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1A1D24;background:#FB923C;padding:8px 22px;border-radius:8px">Безпека і регулювання</p>
+<p style="font-size:26px;font-weight:600;color:#C9C4BC">21 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#FB923C">07 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:60px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#F5F2EE">«Чорний жовтень»: ШІ знайшов критичні діри в PHP — мові ≈70% сайтів</h2>
+<div data-build-in="rise 3 auto" style="position:absolute;left:128px;top:380px;width:533px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Calif з моделлю GPT-5.6 Sol і компанія Wiz знайшли дві вразливості для віддаленого запуску коду</p>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:693px;top:380px;width:533px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Патч вийшов того ж дня, але спроби атак зросли до мільйонів; ФБР і АНБ радили відключати сервери</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1258px;top:380px;width:534px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Того ж тижня: шкідлива версія LiteLLM, зломи Railway та OpenCode — хвиля крадіжок API-ключів</p>
+</div>
+<div data-build-in="left 6 auto" style="position:absolute;left:128px;top:736px;width:1664px;display:flex;align-items:center;gap:40px;background:#2A1C14;border-left:8px solid #FB923C;border-radius:16px;padding:28px 40px">
+<div style="width:340px;display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:56px;font-weight:700;line-height:1.1;color:#FB923C">≈70%</p>
+<p style="font-size:24px;line-height:1.3;color:#C9C4BC">сайтів у світі працюють на PHP</p>
+</div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F5F2EE"><b>Чому це важливо:</b> ШІ знаходить вразливості швидше за людей — і для захисту, і для атак. Вчасно оновлюйте ПЗ і змінюйте ключі доступу.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#A8A39B">Джерела: ppc.land, willk30.substack.com</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#A8A39B">10</p>
+<aside class="notes">«Чорним жовтнем» у техспільноті назвали серію інцидентів 17–23 жовтня. Центральна подія — PHP2Shell: 21 жовтня OpenAI повідомила, що компанія Calif за допомогою GPT-5.6 Sol знайшла критичну вразливість у PHP; Wiz незалежно знайшла обидві. Виправлення вийшли того ж дня, Cloudflare блокувала атаки ще до релізу. Паралельно — шкідлива версія бібліотеки LiteLLM (≈49 тис. завантажень за дві години), злам хостингу Railway, атаки на OpenCode. Практичний висновок: оновлення й ротація ключів. Джерела: https://ppc.land/openai-says-gpt-5-6-sol-found-a-php-flaw-before-attackers-did/ ; https://willk30.substack.com/p/black-october-claude-duet-and-blocks</aside>
+</section>
+
+<section class="slide" id="s08" data-transition="push" style="background:#1A1D24;color:#F5F2EE;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:20px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:#1A1D24&quot;&gt;&lt;div style=&quot;position:absolute;left:-136px;top:0;width:2200px;height:20px;background:repeating-linear-gradient(45deg,#FB923C 0 24px,#1A1D24 24px 48px);animation:m 1.2s linear infinite&quot;&gt;&lt;/div&gt;&lt;style&gt;@keyframes m{to{transform:translateX(67.88px)}}&lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:1060px;width:1920px;height:20px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:#1A1D24&quot;&gt;&lt;div style=&quot;position:absolute;left:-136px;top:0;width:2200px;height:20px;background:repeating-linear-gradient(45deg,#FB923C 0 24px,#1A1D24 24px 48px);animation:m 1.2s linear infinite reverse&quot;&gt;&lt;/div&gt;&lt;style&gt;@keyframes m{to{transform:translateX(67.88px)}}&lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1A1D24;background:#FB923C;padding:8px 22px;border-radius:8px">Безпека і регулювання</p>
+<p style="font-size:26px;font-weight:600;color:#C9C4BC">23–25 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#FB923C">08 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:60px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#F5F2EE">Claude і ChatGPT почали обмежувати реверс-інжиніринг через REA</h2>
+<div data-build-in="rise 3 auto" style="position:absolute;left:128px;top:380px;width:533px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Користувачі повідомляють: Claude відмовляється працювати з REA — найпопулярнішим інструментом тижня на GitHub</p>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:693px;top:380px;width:533px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Дослідник log4j розібрав телевізор Samsung, знайшов код збору даних — і отримав бан в OpenAI за «кіберзловживання»</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1258px;top:380px;width:534px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Офіційних заяв немає. Нова політика Anthropic з 12 листопада прямо дозволяє дослідження безпеки власних систем</p>
+</div>
+<div data-build-in="left 6 auto" style="position:absolute;left:128px;top:736px;width:1664px;display:flex;align-items:center;gap:40px;background:#2A1C14;border-left:8px solid #FB923C;border-radius:16px;padding:28px 40px">
+<div style="width:340px;display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:56px;font-weight:700;line-height:1.1;color:#FB923C">1 млн+</p>
+<p style="font-size:24px;line-height:1.3;color:#C9C4BC">переглядів постів про «смерть REA»</p>
+</div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F5F2EE"><b>Чому це важливо:</b> межа між захистом і атакою розмита. Компанії страхуються ширшими блокуваннями, а дослідники переходять на локальні моделі.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#A8A39B">Джерела: aicoder.com, mezha.net, github.com/morluto/rea · дані з соцмереж, не підтверджені компаніями</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#A8A39B">11</p>
+<aside class="notes">REA (Reverse Engineer Anything) — інструмент, що дає ШІ-агентам розбирати будь-які програми аж до машинного коду; за тиждень він набрав +55,9 тис. зірок на GitHub. 21 жовтня дослідник під ніком log4j опублікував розбір свого телевізора Samsung: за його словами, ПЗ класифікує звуки, робить знімки екрана й відстежує перегляд для реклами (Samsung це не коментувала). Потім він повідомив, що OpenAI заблокувала його акаунт за «кіберзловживання», хоча робота була локальною. 23 жовтня пости «Anthropic тихо вбила REA» зібрали понад мільйон переглядів. Важливо: це повідомлення користувачів; офіційних заяв Anthropic чи OpenAI немає, частина людей пише, що REA у них працює. Нова редакція політики використання Anthropic (з 12 листопада 2026) прямо зазначає, що дослідження безпеки власних систем не заборонені. Джерела: https://aicoder.com/news/news-20261025-x-discussion-claude-rea-reverse-engineering-blocked ; https://mezha.net/eng/news/mezha-bfcfc1a9d863abac108b8ee7_researcher_says_samsung/ ; https://github.com/morluto/rea/discussions/2304</aside>
+</section>
+
+<section class="slide" id="s09" data-transition="fade" style="background:#1A1D24;color:#F5F2EE;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:20px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:#1A1D24&quot;&gt;&lt;div style=&quot;position:absolute;left:-136px;top:0;width:2200px;height:20px;background:repeating-linear-gradient(45deg,#FB923C 0 24px,#1A1D24 24px 48px);animation:m 1.2s linear infinite&quot;&gt;&lt;/div&gt;&lt;style&gt;@keyframes m{to{transform:translateX(67.88px)}}&lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:1060px;width:1920px;height:20px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:#1A1D24&quot;&gt;&lt;div style=&quot;position:absolute;left:-136px;top:0;width:2200px;height:20px;background:repeating-linear-gradient(45deg,#FB923C 0 24px,#1A1D24 24px 48px);animation:m 1.2s linear infinite reverse&quot;&gt;&lt;/div&gt;&lt;style&gt;@keyframes m{to{transform:translateX(67.88px)}}&lt;/style&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1A1D24;background:#FB923C;padding:8px 22px;border-radius:8px">Безпека і регулювання</p>
+<p style="font-size:26px;font-weight:600;color:#C9C4BC">19 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#FB923C">09 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:60px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#F5F2EE">США: нові правила для ШІ в держзакупівлях набули чинності</h2>
+<div data-build-in="rise 3 auto" style="position:absolute;left:128px;top:380px;width:533px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Пункт GSAR 552.239-7001 діє для чат-ботів, LLM та агентних систем, які купує уряд США</p>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:693px;top:380px;width:533px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Модель має бути налаштована на точність і об’єктивність; держава може тестувати її на упередженість</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1258px;top:380px;width:534px;height:320px;display:flex;flex-direction:column;gap:16px;background:#242832;border:1px solid #343946;border-radius:16px;padding:32px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#FB923C;width:48px;height:48px"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+<p style="font-size:26px;line-height:1.4;color:#E6E1DA">Інциденти з держданими — обов’язково повідомляти; вимоги поширюються й на субпідрядників</p>
+</div>
+<div data-build-in="left 6 auto" style="position:absolute;left:128px;top:736px;width:1664px;display:flex;align-items:center;gap:40px;background:#2A1C14;border-left:8px solid #FB923C;border-radius:16px;padding:28px 40px">
+<div style="width:340px;display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:56px;font-weight:700;line-height:1.1;color:#FB923C">19.10</p>
+<p style="font-size:24px;line-height:1.3;color:#C9C4BC">2026 — дата набуття чинності</p>
+</div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F5F2EE"><b>Чому це важливо:</b> держзакупівлі ШІ отримують власні правила. Схожий підхід і в AI Act ЄС: прозорість, захист даних, відповідальність постачальника.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#A8A39B">Джерело: winvale.com (огляд правила GSA)</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#A8A39B">12</p>
+<aside class="notes">З 19 жовтня 2026 у США діє пункт GSAR 552.239-7001 «Базовий захист систем ШІ» — для закупівель Адміністрації загальних служб (GSA). Він стосується випадків, коли держдані потрапляють у LLM або генеруються нею. Вимоги: модель має бути налаштована на точність і об’єктивність, держава може проводити автоматичні тести на упередженість і безпеку, інциденти треба повідомляти, а субпідрядники отримують ті самі вимоги. До каталогу MAS пункт додадуть у листопаді. Джерело: https://info.winvale.com/blog/gsas-new-ai-clause-is-here-heres-what-mas-contractors-should-know</aside>
+</section>
+
+<section class="slide" id="p10" data-transition="push" style="background:#F5F2FC;color:#1E1438;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const B=[[.12,.18,&#x27;124,58,237&#x27;],[.88,.22,&#x27;236,72,153&#x27;],[.72,.88,&#x27;124,58,237&#x27;],[.18,.9,&#x27;59,130,246&#x27;],[.5,.5,&#x27;167,139,250&#x27;]].map((b,i)=&gt;({x:b[0],y:b[1],c:b[2],p:i*1.3}));
+function f(t){x.clearRect(0,0,W,H);for(const b of B){const X=(b.x+.07*Math.sin(t/3500+b.p))*W,Y=(b.y+.07*Math.cos(t/4500+b.p))*H,rr=Math.min(W,H)*.42,g=x.createRadialGradient(X,Y,0,X,Y,rr);g.addColorStop(0,&#x27;rgba(&#x27;+b.c+&#x27;,.17)&#x27;);g.addColorStop(1,&#x27;rgba(&#x27;+b.c+&#x27;,0)&#x27;);x.fillStyle=g;x.fillRect(0,0,W,H)}requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#6D28D9;background:#E7DEFA;border:2px solid #6D28D9;padding:6px 22px;border-radius:999px">Практика і відкритий код</p>
+<p style="font-size:26px;font-weight:600;color:#4D4566">20–21 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#6D28D9">10 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#1E1438">ChatGPT дозволив ховати приватні чати за PIN-кодом або біометрією</h2>
+<div data-build-in="scale 3 auto" style="position:absolute;left:128px;top:380px;width:1664px;height:210px;display:flex;align-items:center;gap:48px;background:linear-gradient(120deg, #5B21B6 0%, #7C3AED 100%);border-radius:28px;padding:36px 56px;box-shadow:0 16px 40px rgba(91,33,182,0.25)">
+<div style="width:480px;display:flex;flex-direction:column;gap:6px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:64px;font-weight:700;line-height:1.1;color:#FBF9FF">4 цифри</p>
+<p style="font-size:24px;line-height:1.3;color:#F1EAFF">PIN-код для доступу до прихованих чатів</p>
+</div>
+<div style="width:2px;height:130px;background:#B9A2F0"></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#FBF9FF">Це захист від чужих очей, а не шифрування: правила зберігання даних не змінюються. Для таємниць — тимчасовий чат.</p>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:128px;top:630px;width:533px;display:flex;gap:20px;align-items:start;background:#FCFBFF;border:1px solid #E2DAF5;border-radius:20px;padding:28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#6D28D9;border-radius:50%"><p style="font-family:'Unbounded', Verdana, sans-serif;font-size:26px;font-weight:700;color:#FBF9FF">1</p></div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#2E2645">Заблоковані чати зникають з історії та пошуку й відкриваються лише PIN-кодом або Face ID</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:693px;top:630px;width:533px;display:flex;gap:20px;align-items:start;background:#FCFBFF;border:1px solid #E2DAF5;border-radius:20px;padding:28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#6D28D9;border-radius:50%"><p style="font-family:'Unbounded', Verdana, sans-serif;font-size:26px;font-weight:700;color:#FBF9FF">2</p></div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#2E2645">Доступно на всіх тарифах — від Free до Enterprise; функція вмикається поступово</p>
+</div>
+<div data-build-in="rise 6 auto" style="position:absolute;left:1258px;top:630px;width:534px;display:flex;gap:20px;align-items:start;background:#FCFBFF;border:1px solid #E2DAF5;border-radius:20px;padding:28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#6D28D9;border-radius:50%"><p style="font-family:'Unbounded', Verdana, sans-serif;font-size:26px;font-weight:700;color:#FBF9FF">3</p></div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#2E2645">Забули PIN — заблоковані чати видаляються назавжди, підтримка OpenAI їх не відновить</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#635B7A">Джерело: businesstoday.in</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#635B7A">13</p>
+<aside class="notes">Практична новина для кожного користувача. Щоб заблокувати чат: меню з трьома крапками → Lock chat. Заблоковані чати лежать у Projects → Locked chats. Не можна блокувати тимчасові, архівні та групові чати. Важливо: це не наскрізне шифрування — OpenAI так само зберігає дані, і налаштування навчання моделей не змінюються. Якщо забути PIN і скинути його, заблоковані чати зникнуть назавжди. Джерело: https://www.businesstoday.in/technology/news/story/chatgpt-gets-locked-chats-with-pin-protection-how-it-works-and-what-happens-if-you-forget-your-pin-562695-2026-10-21</aside>
+</section>
+
+<section class="slide" id="p11" data-transition="fade" style="background:#F5F2FC;color:#1E1438;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const B=[[.12,.18,&#x27;124,58,237&#x27;],[.88,.22,&#x27;236,72,153&#x27;],[.72,.88,&#x27;124,58,237&#x27;],[.18,.9,&#x27;59,130,246&#x27;],[.5,.5,&#x27;167,139,250&#x27;]].map((b,i)=&gt;({x:b[0],y:b[1],c:b[2],p:i*1.3}));
+function f(t){x.clearRect(0,0,W,H);for(const b of B){const X=(b.x+.07*Math.sin(t/3500+b.p))*W,Y=(b.y+.07*Math.cos(t/4500+b.p))*H,rr=Math.min(W,H)*.42,g=x.createRadialGradient(X,Y,0,X,Y,rr);g.addColorStop(0,&#x27;rgba(&#x27;+b.c+&#x27;,.17)&#x27;);g.addColorStop(1,&#x27;rgba(&#x27;+b.c+&#x27;,0)&#x27;);x.fillStyle=g;x.fillRect(0,0,W,H)}requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;display:flex;align-items:center;gap:20px">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#6D28D9;background:#E7DEFA;border:2px solid #6D28D9;padding:6px 22px;border-radius:999px">Практика і відкритий код</p>
+<p style="font-size:26px;font-weight:600;color:#4D4566">20 жовтня</p>
+<div style="flex:1"></div>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#6D28D9">11 / 11</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:200px;width:1664px;font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#1E1438">DeepSeek відкрила DeepInfer — свій рушій для чипів Nvidia і Huawei</h2>
+<div data-build-in="scale 3 auto" style="position:absolute;left:128px;top:380px;width:1664px;height:210px;display:flex;align-items:center;gap:48px;background:linear-gradient(120deg, #5B21B6 0%, #7C3AED 100%);border-radius:28px;padding:36px 56px;box-shadow:0 16px 40px rgba(91,33,182,0.25)">
+<div style="width:480px;display:flex;flex-direction:column;gap:6px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:64px;font-weight:700;line-height:1.1;color:#FBF9FF">+8,8 тис.</p>
+<p style="font-size:24px;line-height:1.3;color:#F1EAFF">зірок на GitHub за тиждень 19–25 жовтня</p>
+</div>
+<div style="width:2px;height:130px;background:#B9A2F0"></div>
+<p style="flex:1;font-size:28px;line-height:1.4;color:#FBF9FF">Китай зменшує залежність від Nvidia: моделі DeepSeek можна запускати на власних серверах, зокрема на чипах Huawei Ascend.</p>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:128px;top:630px;width:533px;display:flex;gap:20px;align-items:start;background:#FCFBFF;border:1px solid #E2DAF5;border-radius:20px;padding:28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#6D28D9;border-radius:50%"><p style="font-family:'Unbounded', Verdana, sans-serif;font-size:26px;font-weight:700;color:#FBF9FF">1</p></div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#2E2645">Той самий фреймворк, на якому працюють сервіси DeepSeek, тепер у відкритому доступі</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:693px;top:630px;width:533px;display:flex;gap:20px;align-items:start;background:#FCFBFF;border:1px solid #E2DAF5;border-radius:20px;padding:28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#6D28D9;border-radius:50%"><p style="font-family:'Unbounded', Verdana, sans-serif;font-size:26px;font-weight:700;color:#FBF9FF">2</p></div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#2E2645">Розподілений запуск, спекулятивне декодування, структурований вивід; поки — DeepSeek-V4.1-Flash</p>
+</div>
+<div data-build-in="rise 6 auto" style="position:absolute;left:1258px;top:630px;width:534px;display:flex;gap:20px;align-items:start;background:#FCFBFF;border:1px solid #E2DAF5;border-radius:20px;padding:28px">
+<div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#6D28D9;border-radius:50%"><p style="font-family:'Unbounded', Verdana, sans-serif;font-size:26px;font-weight:700;color:#FBF9FF">3</p></div>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#2E2645">Репозиторій увійшов у топ-10 GitHub тижня: 21,9 тис. зірок загалом</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#635B7A">Джерела: technode.com, gittrend.io</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#635B7A">14</p>
+<aside class="notes">20 жовтня DeepSeek відкрила код DeepInfer — фреймворку інференсу, на якому працюють її власні сервіси. Він підтримує GPU Nvidia і процесори Huawei Ascend, вміє розподілений запуск, спекулятивне декодування та структурований вивід. Разом з ним відкрили deepseek-recipe для обробки запитів у форматі API DeepSeek. Поки що підтримується DeepSeek-V4.1-Flash. Джерела: https://technode.com/2026/10/21/deepseek-open-sources-inference-framework-with-support-for-nvidia-and-huawei-chips/ ; https://gittrend.io/weekly/2026-W43</aside>
+</section>
+
+<section class="slide" id="repos-intro" data-transition="fade" style="background:radial-gradient(circle at 75% 50%, #1B2333 0%, #0D1117 60%);color:#F3F5FB;font-family:'Manrope', Arial, sans-serif;padding:128px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:1000px;top:128px;width:792px;height:824px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;);let W,H,R=window.devicePixelRatio||1;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+function mk(y){return{x:Math.random(),y:y==null?Math.random():1.05,s:.6+Math.random()*1.6,v:.0006+Math.random()*.0016,p:Math.random()*6,g:Math.random()&lt;.3}}
+const S=[];for(let i=0;i&lt;70;i++)S.push(mk());
+function star(cx,cy,r,a){x.beginPath();for(let i=0;i&lt;10;i++){const rr=i%2?r*.42:r,an=a+i*Math.PI/5;x.lineTo(cx+Math.cos(an)*rr,cy+Math.sin(an)*rr)}x.closePath();x.fill()}
+function f(t){x.clearRect(0,0,W,H);
+for(let i=0;i&lt;S.length;i++){const s=S[i];s.y-=s.v;if(s.y&lt;-.05)S[i]=mk(1);
+const tw=.55+.45*Math.sin(t/400+s.p),rad=(s.g?7:4)*s.s*R;
+x.globalAlpha=tw*(s.y&lt;.15?s.y/.15:1);x.fillStyle=s.g?&#x27;#FFB37A&#x27;:&#x27;#9FB0FF&#x27;;
+if(s.g){x.shadowColor=&#x27;#FF7A1A&#x27;;x.shadowBlur=18*R;star(s.x*W,s.y*H,rad,t/2000+s.p)}else{x.shadowBlur=0;x.beginPath();x.arc(s.x*W,s.y*H,rad*.5,0,7);x.fill()}}
+x.globalAlpha=1;x.shadowBlur=0;requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p data-build-in="fade 1 auto" style="position:absolute;left:128px;top:250px;width:860px;font-size:26px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#FFB37A">Розділ 2 · Відкритий код</p>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:310px;width:860px;font-size:84px;font-weight:800;line-height:1.05;letter-spacing:-1px;color:#F3F5FB">GitHub: репозиторії, що вибухнули зірками</h2>
+<p data-build-in="fade 3 auto" style="position:absolute;left:128px;top:720px;width:820px;font-size:30px;line-height:1.4;color:#B9C2DA">Тиждень 19–25 жовтня 2026 · рейтинг gittrend.io за приростом зірок</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#8E98B5">15</p>
+<aside class="notes">Другий розділ — GitHub. Зірки на GitHub — це «лайки» розробників: що швидше проєкт їх набирає, то цікавішою спільнота вважає його технологію. Беремо тиждень 19–25 жовтня за рейтингом gittrend.io і обираємо п’ять ШІ-проєктів з найбільшим приростом.</aside>
+</section>
+
+<section class="slide" id="g-chart" data-transition="push" style="background:#0D1117;color:#E6EDF3;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<p data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1200px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:500;color:#3FB950">$ git trending --since=weekly --topic=ai</p>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:180px;width:1664px;font-size:72px;font-weight:800;line-height:1.1;color:#E6EDF3">Найгарячіші ШІ-репозиторії тижня</h2>
+<p style="position:absolute;left:128px;top:356px;width:540px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#E6EDF3">cloudflare/security-audit-skill</p>
+<div data-build-in="left 3 auto" style="position:absolute;left:680px;top:340px;width:820px;height:64px;background:#E3B341;border-radius:12px"></div>
+<p data-build-in="fade 4 auto" style="position:absolute;left:1524px;top:350px;width:260px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#E3B341">+13,5 тис.</p>
+<p style="position:absolute;left:128px;top:462px;width:540px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#E6EDF3">ai-job-search</p>
+<div data-build-in="left 5 auto" style="position:absolute;left:680px;top:450px;width:699px;height:64px;background:#3FB950;border-radius:12px"></div>
+<p data-build-in="fade 6 auto" style="position:absolute;left:1403px;top:460px;width:260px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#3FB950">+11,5 тис.</p>
+<p style="position:absolute;left:128px;top:572px;width:540px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#E6EDF3">DietrichGebert/ponytail</p>
+<div data-build-in="left 7 auto" style="position:absolute;left:680px;top:560px;width:516px;height:64px;background:#3FB950;border-radius:12px"></div>
+<p data-build-in="fade 8 auto" style="position:absolute;left:1220px;top:570px;width:260px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#3FB950">+8,5 тис.</p>
+<p style="position:absolute;left:128px;top:682px;width:540px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#E6EDF3">xerj-org/xerj</p>
+<div data-build-in="left 9 auto" style="position:absolute;left:680px;top:670px;width:413px;height:64px;background:#58A6FF;border-radius:12px"></div>
+<p data-build-in="fade 10 auto" style="position:absolute;left:1117px;top:680px;width:420px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#58A6FF">+6,8 тис. · новинка</p>
+<p style="position:absolute;left:128px;top:792px;width:540px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#E6EDF3">tangency-labs/solidcraft</p>
+<div data-build-in="left 11 auto" style="position:absolute;left:680px;top:780px;width:261px;height:64px;background:#58A6FF;border-radius:12px"></div>
+<p data-build-in="fade 12 auto" style="position:absolute;left:965px;top:790px;width:420px;font-family:'Unbounded', Verdana, sans-serif;font-size:28px;font-weight:700;color:#58A6FF">+4,3 тис. · новинка</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1500px;font-size:24px;color:#9DA7B3">Приріст зірок за 19–25.10.2026 · gittrend.io · REA (+55,9 тис.) — у новині 08, DeepInfer (+8,8 тис.) — у новині 11</p>
+<p style="position:absolute;right:128px;bottom:64px;width:120px;font-size:24px;text-align:right;color:#9DA7B3">16</p>
+<aside class="notes">П’ять ШІ-проєктів з найбільшим приростом зірок за тиждень. Лідер — навичка для аудиту безпеки від Cloudflare, далі — фреймворк для пошуку роботи на Claude Code і правила Ponytail для мінімального коду. Синім позначено новинки, які з’явилися саме цього тижня: xerj — локальний пошук і пам’ять для агентів, та SolidCraft — CAD-система, якою керує ШІ. REA, абсолютний лідер тижня, ми розібрали в новині про обмеження реверс-інжинірингу, а DeepInfer — у новині про DeepSeek. Джерело: https://gittrend.io/weekly/2026-W43</aside>
+</section>
+
+<section class="slide" id="g01" data-transition="push" style="background:#0D1117;color:#E6EDF3;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:792px;background:#161B22;border:1px solid #30363D;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,0.45)"></div>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:72px;display:flex;align-items:center;gap:14px;background:#1C2129;border-bottom:1px solid #30363D;border-radius:20px 20px 0px 0px;padding:0px 28px">
+<div style="width:18px;height:18px;background:#FF5F57;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#FEBC2E;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#28C840;border-radius:50%"></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9DA7B3;padding:0px 16px">github.com/cloudflare/security-audit-skill</p>
+<div style="flex:1"></div>
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:28px;height:28px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-size:24px;font-weight:800;color:#E3B341">№1 · 1 / 5</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:192px;top:236px;width:960px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:48px;font-weight:700;line-height:1.15;color:#E6EDF3">cloudflare/security-audit-skill</h2>
+<p data-build-in="rise 3 auto" style="position:absolute;left:192px;top:310px;width:960px;font-size:28px;font-weight:600;line-height:1.4;color:#58A6FF">Навичка для ШІ-агентів: аудит безпеки коду від Cloudflare</p>
+<div data-build-in="left 4 auto" style="position:absolute;left:192px;top:420px;width:960px;display:flex;flex-direction:column;gap:26px">
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Що це:</b></span> відкрита (MIT) версія підходу, яким Cloudflare постійно перевіряє 128 власних репозиторіїв</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Як працює:</b></span> 6 етапів — розвідка, агенти-«мисливці» шукають баги, свіжий агент намагається їх спростувати, повторна перевірка, звіт</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Кому:</b></span> командам розробки; у Cloudflare репозиторій на 30 тис. рядків дає ~80 багів за 3 години</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1200px;top:236px;width:528px;display:flex;flex-direction:column;gap:14px;background:#0D1117;border:1px solid #30363D;border-radius:16px;padding:36px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:56px;height:56px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:48px;font-weight:700;line-height:1.1;color:#E3B341">+13,5 тис.</p>
+<p style="font-size:24px;line-height:1.4;color:#9DA7B3">зірок за тиждень · 44,7 тис. загалом</p>
+<hr style="border-top:1px solid #30363D">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#3FB950">Чому це важливо</p>
+<p style="font-size:24px;line-height:1.4;color:#E6EDF3">Агенти перевіряють один одного — це відсіює хибні тривоги. Але знахідки все одно має переглянути людина.</p>
+</div>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:192px;top:850px;width:960px;height:52px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent;font:500 24px ui-monospace,Menlo,Consolas,monospace;color:#3FB950;line-height:52px;white-space:nowrap&quot;&gt;&lt;span id=&quot;t&quot;&gt;&lt;/span&gt;&lt;span id=&quot;k&quot; style=&quot;display:inline-block;width:13px;height:26px;background:#3FB950;vertical-align:middle;margin-left:2px&quot;&gt;&lt;/span&gt;&lt;script&gt;
+const s=&#x27;$ git clone https://github.com/cloudflare/security-audit-skill&#x27;;const t=document.getElementById(&#x27;t&#x27;),k=document.getElementById(&#x27;k&#x27;);let i=0;
+setInterval(()=&gt;{i=i&gt;s.length+25?0:i+1;t.textContent=s.slice(0,i)},70);setInterval(()=&gt;{k.style.opacity=k.style.opacity===&#x27;0&#x27;?&#x27;1&#x27;:&#x27;0&#x27;},500);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#9DA7B3">Джерела: fireup.pro, gittrend.io</p>
+<p style="position:absolute;right:128px;bottom:64px;width:120px;font-size:24px;text-align:right;color:#9DA7B3">17</p>
+<aside class="notes">Cloudflare 20 жовтня відкрила під ліцензією MIT «навичку» для аудиту безпеки — набір інструкцій, чек-листів атак і валідаторів, який завантажує агент-кодер. Шість етапів: розвідка архітектури, пошук багів агентами-«мисливцями», спроба спростувати кожну знахідку новим агентом, структурований JSON, незалежна перевірка, звіт лише з підтверджених записів. Внутрішній досвід Cloudflare: ~80 багів у репозиторії на 30 тис. рядків за ~3 години, з них ~10 критичних. Джерело: https://fireup.pro/news/cloudflare-open-sources-its-ai-security-auditor-heres-why-it-matters</aside>
+</section>
+
+<section class="slide" id="g03" data-transition="push" style="background:#0D1117;color:#E6EDF3;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:792px;background:#161B22;border:1px solid #30363D;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,0.45)"></div>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:72px;display:flex;align-items:center;gap:14px;background:#1C2129;border-bottom:1px solid #30363D;border-radius:20px 20px 0px 0px;padding:0px 28px">
+<div style="width:18px;height:18px;background:#FF5F57;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#FEBC2E;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#28C840;border-radius:50%"></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9DA7B3;padding:0px 16px">github.com/ai-job-search-dev/ai-job-search</p>
+<div style="flex:1"></div>
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:28px;height:28px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-size:24px;font-weight:800;color:#E3B341">№2 · 2 / 5</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:192px;top:236px;width:960px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:48px;font-weight:700;line-height:1.15;color:#E6EDF3">ai-job-search</h2>
+<p data-build-in="rise 3 auto" style="position:absolute;left:192px;top:310px;width:960px;font-size:28px;font-weight:600;line-height:1.4;color:#58A6FF">Локальний помічник для пошуку роботи на базі Claude Code</p>
+<div data-build-in="left 4 auto" style="position:absolute;left:192px;top:420px;width:960px;display:flex;flex-direction:column;gap:26px">
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Що це:</b></span> відкритий фреймворк, що перетворює агента-кодера на персонального кар’єрного асистента</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Як працює:</b></span> оцінює вакансії за вашими критеріями, адаптує резюме, пише супровідні листи, готує до співбесід</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Кому:</b></span> шукачам роботи та HR-фахівцям; усі дані лишаються на вашому комп’ютері</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1200px;top:236px;width:528px;display:flex;flex-direction:column;gap:14px;background:#0D1117;border:1px solid #30363D;border-radius:16px;padding:36px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:56px;height:56px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:48px;font-weight:700;line-height:1.1;color:#E3B341">+11,5 тис.</p>
+<p style="font-size:24px;line-height:1.4;color:#9DA7B3">зірок за тиждень · 64,9 тис. загалом</p>
+<hr style="border-top:1px solid #30363D">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#3FB950">Чому це важливо</p>
+<p style="font-size:24px;line-height:1.4;color:#E6EDF3">Агенти-кодери стають універсальними асистентами: той самий Claude Code веде пошук роботи, а не лише пише програми.</p>
+</div>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:192px;top:850px;width:960px;height:52px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent;font:500 24px ui-monospace,Menlo,Consolas,monospace;color:#3FB950;line-height:52px;white-space:nowrap&quot;&gt;&lt;span id=&quot;t&quot;&gt;&lt;/span&gt;&lt;span id=&quot;k&quot; style=&quot;display:inline-block;width:13px;height:26px;background:#3FB950;vertical-align:middle;margin-left:2px&quot;&gt;&lt;/span&gt;&lt;script&gt;
+const s=&#x27;$ git clone https://github.com/ai-job-search-dev/ai-job-search&#x27;;const t=document.getElementById(&#x27;t&#x27;),k=document.getElementById(&#x27;k&#x27;);let i=0;
+setInterval(()=&gt;{i=i&gt;s.length+25?0:i+1;t.textContent=s.slice(0,i)},70);setInterval(()=&gt;{k.style.opacity=k.style.opacity===&#x27;0&#x27;?&#x27;1&#x27;:&#x27;0&#x27;},500);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#9DA7B3">Джерела: aitoolly.com, gittrend.io</p>
+<p style="position:absolute;right:128px;bottom:64px;width:120px;font-size:24px;text-align:right;color:#9DA7B3">18</p>
+<aside class="notes">ai-job-search — відкритий фреймворк, побудований поверх Claude Code. Він проходить з вами весь цикл пошуку роботи: фільтрує вакансії за вашими критеріями, переписує резюме під конкретну позицію, складає супровідні листи і допомагає готуватися до співбесід. Працює локально, тому особисті дані не потрапляють на сторонні платформи. Джерела: https://aitoolly.com/ai-news/article/2026-10-21-ai-job-search-an-open-source-job-application-framework-built-on-claude-code ; https://gittrend.io/weekly/2026-W43</aside>
+</section>
+
+<section class="slide" id="g04" data-transition="push" style="background:#0D1117;color:#E6EDF3;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:792px;background:#161B22;border:1px solid #30363D;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,0.45)"></div>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:72px;display:flex;align-items:center;gap:14px;background:#1C2129;border-bottom:1px solid #30363D;border-radius:20px 20px 0px 0px;padding:0px 28px">
+<div style="width:18px;height:18px;background:#FF5F57;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#FEBC2E;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#28C840;border-radius:50%"></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9DA7B3;padding:0px 16px">github.com/DietrichGebert/ponytail</p>
+<div style="flex:1"></div>
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:28px;height:28px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-size:24px;font-weight:800;color:#E3B341">№3 · 3 / 5</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:192px;top:236px;width:960px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:48px;font-weight:700;line-height:1.15;color:#E6EDF3">DietrichGebert/ponytail</h2>
+<p data-build-in="rise 3 auto" style="position:absolute;left:192px;top:310px;width:960px;font-size:28px;font-weight:600;line-height:1.4;color:#58A6FF">«Лінивий сеньйор»: правила, що вчать агентів писати менше коду</p>
+<div data-build-in="left 4 auto" style="position:absolute;left:192px;top:420px;width:960px;display:flex;flex-direction:column;gap:26px">
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Що це:</b></span> набір правил для агентів-кодерів — найменше правильне рішення без шкоди для безпеки й перевірок</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Як працює:</b></span> 7 сходинок — чи потрібна функція, чи вона вже є в коді, бібліотеці, платформі — і лише потім новий код</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Кому:</b></span> розробникам на Claude Code, Codex та інших; у тесті автора — на 54% менше коду й на 20% дешевше</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1200px;top:236px;width:528px;display:flex;flex-direction:column;gap:14px;background:#0D1117;border:1px solid #30363D;border-radius:16px;padding:36px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:56px;height:56px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:48px;font-weight:700;line-height:1.1;color:#E3B341">+8,5 тис.</p>
+<p style="font-size:24px;line-height:1.4;color:#9DA7B3">зірок за тиждень · 175,6 тис. загалом</p>
+<hr style="border-top:1px solid #30363D">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#3FB950">Чому це важливо</p>
+<p style="font-size:24px;line-height:1.4;color:#E6EDF3">Більше коду — більше багів і витрат. Тренд тижня: вчити агентів робити менше, але краще.</p>
+</div>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:192px;top:850px;width:960px;height:52px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent;font:500 24px ui-monospace,Menlo,Consolas,monospace;color:#3FB950;line-height:52px;white-space:nowrap&quot;&gt;&lt;span id=&quot;t&quot;&gt;&lt;/span&gt;&lt;span id=&quot;k&quot; style=&quot;display:inline-block;width:13px;height:26px;background:#3FB950;vertical-align:middle;margin-left:2px&quot;&gt;&lt;/span&gt;&lt;script&gt;
+const s=&#x27;$ git clone https://github.com/DietrichGebert/ponytail&#x27;;const t=document.getElementById(&#x27;t&#x27;),k=document.getElementById(&#x27;k&#x27;);let i=0;
+setInterval(()=&gt;{i=i&gt;s.length+25?0:i+1;t.textContent=s.slice(0,i)},70);setInterval(()=&gt;{k.style.opacity=k.style.opacity===&#x27;0&#x27;?&#x27;1&#x27;:&#x27;0&#x27;},500);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#9DA7B3">Джерела: flaviocopes.com, gittrend.io</p>
+<p style="position:absolute;right:128px;bottom:64px;width:120px;font-size:24px;text-align:right;color:#9DA7B3">19</p>
+<aside class="notes">Ponytail від Дітріха Гебера — правила «лінивого сеньйора» для агентів-кодерів. Агент проходить сходинки: чи справді потрібна функція, чи вже є подібний код у проєкті, у стандартній бібліотеці, у самій платформі, у встановлених залежностях, чи вистачить одного рядка — і лише наприкінці пише мінімальний новий код. Валідація, обробка помилок і безпека залишаються. У тесті автора на 12 задачах: на 54% менше доданих рядків, на 22% менше токенів, на 20% дешевше — але це один репозиторій і одна модель, тож гарантій немає. Джерело: https://flaviocopes.com/ponytail</aside>
+</section>
+
+<section class="slide" id="g06" data-transition="push" style="background:#0D1117;color:#E6EDF3;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:792px;background:#161B22;border:1px solid #30363D;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,0.45)"></div>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:72px;display:flex;align-items:center;gap:14px;background:#1C2129;border-bottom:1px solid #30363D;border-radius:20px 20px 0px 0px;padding:0px 28px">
+<div style="width:18px;height:18px;background:#FF5F57;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#FEBC2E;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#28C840;border-radius:50%"></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9DA7B3;padding:0px 16px">github.com/xerj-org/xerj</p>
+<div style="flex:1"></div>
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:28px;height:28px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-size:24px;font-weight:800;color:#E3B341">№4 · 4 / 5 · новинка</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:192px;top:236px;width:960px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:48px;font-weight:700;line-height:1.15;color:#E6EDF3">xerj-org/xerj</h2>
+<p data-build-in="rise 3 auto" style="position:absolute;left:192px;top:310px;width:960px;font-size:28px;font-weight:600;line-height:1.4;color:#58A6FF">Локальний пошуковик і «пам’ять» для ШІ-агентів в одному файлі</p>
+<div data-build-in="left 4 auto" style="position:absolute;left:192px;top:420px;width:960px;display:flex;flex-direction:column;gap:26px">
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Що це:</b></span> пошуковий рушій на Rust і MCP-сервер, що індексує код, документи, логи, таблиці та PDF</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Як працює:</b></span> поєднує класичний повнотекстовий пошук (BM25) і векторний за змістом — гібридний пошук без хмари</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Кому:</b></span> командам, які дають агентам доступ до власних документів (RAG); API сумісний з Elasticsearch</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1200px;top:236px;width:528px;display:flex;flex-direction:column;gap:14px;background:#0D1117;border:1px solid #30363D;border-radius:16px;padding:36px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:56px;height:56px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:48px;font-weight:700;line-height:1.1;color:#E3B341">+6,8 тис.</p>
+<p style="font-size:24px;line-height:1.4;color:#9DA7B3">зірок за тиждень · 15,3 тис. загалом</p>
+<hr style="border-top:1px solid #30363D">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#3FB950">Чому це важливо</p>
+<p style="font-size:24px;line-height:1.4;color:#E6EDF3">Агентам потрібна пам’ять про ваші дані. xerj дає її локально — без передачі документів у хмару.</p>
+</div>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:192px;top:850px;width:960px;height:52px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent;font:500 24px ui-monospace,Menlo,Consolas,monospace;color:#3FB950;line-height:52px;white-space:nowrap&quot;&gt;&lt;span id=&quot;t&quot;&gt;&lt;/span&gt;&lt;span id=&quot;k&quot; style=&quot;display:inline-block;width:13px;height:26px;background:#3FB950;vertical-align:middle;margin-left:2px&quot;&gt;&lt;/span&gt;&lt;script&gt;
+const s=&#x27;$ git clone https://github.com/xerj-org/xerj&#x27;;const t=document.getElementById(&#x27;t&#x27;),k=document.getElementById(&#x27;k&#x27;);let i=0;
+setInterval(()=&gt;{i=i&gt;s.length+25?0:i+1;t.textContent=s.slice(0,i)},70);setInterval(()=&gt;{k.style.opacity=k.style.opacity===&#x27;0&#x27;?&#x27;1&#x27;:&#x27;0&#x27;},500);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#9DA7B3">Джерела: skillsllm.com, gittrend.io</p>
+<p style="position:absolute;right:128px;bottom:64px;width:120px;font-size:24px;text-align:right;color:#9DA7B3">20</p>
+<aside class="notes">xerj — новий проєкт тижня: більша частина його 15 тисяч зірок набрана саме за 19–25 жовтня. Це один виконуваний файл на Rust, який індексує код, документацію, логи, JSONL/CSV і PDF та працює як MCP-сервер для агентів. Пошук — BM25, векторний або гібридний; є пам’ять для агентів і RAG, API сумісний з Elasticsearch. Порада з безпеки: інсталятор через «curl | sh» варто перевірити перед запуском. Джерела: https://skillsllm.com/skill/xerj ; https://gittrend.io/weekly/2026-W43</aside>
+</section>
+
+<section class="slide" id="g07" data-transition="fade" style="background:#0D1117;color:#E6EDF3;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:792px;background:#161B22;border:1px solid #30363D;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,0.45)"></div>
+<div data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1664px;height:72px;display:flex;align-items:center;gap:14px;background:#1C2129;border-bottom:1px solid #30363D;border-radius:20px 20px 0px 0px;padding:0px 28px">
+<div style="width:18px;height:18px;background:#FF5F57;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#FEBC2E;border-radius:50%"></div>
+<div style="width:18px;height:18px;background:#28C840;border-radius:50%"></div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9DA7B3;padding:0px 16px">github.com/tangency-labs/solidcraft</p>
+<div style="flex:1"></div>
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:28px;height:28px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-size:24px;font-weight:800;color:#E3B341">№5 · 5 / 5 · новинка</p>
+</div>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:192px;top:236px;width:960px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:48px;font-weight:700;line-height:1.15;color:#E6EDF3">tangency-labs/solidcraft</h2>
+<p data-build-in="rise 3 auto" style="position:absolute;left:192px;top:310px;width:960px;font-size:28px;font-weight:600;line-height:1.4;color:#58A6FF">3D-CAD, яким може керувати ШІ-агент</p>
+<div data-build-in="left 4 auto" style="position:absolute;left:192px;top:420px;width:960px;display:flex;flex-direction:column;gap:26px">
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Що це:</b></span> відкрита параметрична CAD-система на Rust: ескізи, тверді тіла, обмеження, історія побудови</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Як працює:</b></span> кожна дія — це команда з JSON-параметрами, тому через MCP-сервер агент «креслить» деталь сам</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D1D9"><span style="color:#3FB950"><b>Кому:</b></span> інженерам і мейкерам; працює на десктопі, у браузері та з командного рядка; проєкт ще ранній</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1200px;top:236px;width:528px;display:flex;flex-direction:column;gap:14px;background:#0D1117;border:1px solid #30363D;border-radius:16px;padding:36px">
+<svg class="ico" viewBox="-3 -3 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#E3B341;width:56px;height:56px"><polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:48px;font-weight:700;line-height:1.1;color:#E3B341">+4,3 тис.</p>
+<p style="font-size:24px;line-height:1.4;color:#9DA7B3">зірок за тиждень · 10,1 тис. загалом</p>
+<hr style="border-top:1px solid #30363D">
+<p style="font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#3FB950">Чому це важливо</p>
+<p style="font-size:24px;line-height:1.4;color:#E6EDF3">ШІ виходить за межі тексту й коду: агенти починають проєктувати фізичні деталі «словами».</p>
+</div>
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:192px;top:850px;width:960px;height:52px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent;font:500 24px ui-monospace,Menlo,Consolas,monospace;color:#3FB950;line-height:52px;white-space:nowrap&quot;&gt;&lt;span id=&quot;t&quot;&gt;&lt;/span&gt;&lt;span id=&quot;k&quot; style=&quot;display:inline-block;width:13px;height:26px;background:#3FB950;vertical-align:middle;margin-left:2px&quot;&gt;&lt;/span&gt;&lt;script&gt;
+const s=&#x27;$ git clone https://github.com/tangency-labs/solidcraft&#x27;;const t=document.getElementById(&#x27;t&#x27;),k=document.getElementById(&#x27;k&#x27;);let i=0;
+setInterval(()=&gt;{i=i&gt;s.length+25?0:i+1;t.textContent=s.slice(0,i)},70);setInterval(()=&gt;{k.style.opacity=k.style.opacity===&#x27;0&#x27;?&#x27;1&#x27;:&#x27;0&#x27;},500);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:24px;color:#9DA7B3">Джерела: hackaday.com, gittrend.io</p>
+<p style="position:absolute;right:128px;bottom:64px;width:120px;font-size:24px;text-align:right;color:#9DA7B3">21</p>
+<aside class="notes">SolidCraft — свіжий проєкт (огляд Hackaday — 17 жовтня), більшість його 10 тисяч зірок набрана цього тижня. Це параметрична CAD-система, повністю написана на Rust: ескізи, тверді тіла, обмеження та таймлайн операцій — змінюєте товщину стінки, і модель перебудовується. Ключова ідея: будь-яка дія — команда з JSON-параметрами, тож вбудований MCP-сервер дає ШІ-агентам керувати програмою. Є десктопна, веб- і консольна версії; автор попереджає, що проєкт ще на ранній стадії. Джерела: https://hackaday.com/2026/10/17/solidcraft-is-parametric-automation-friendly-cad-for-desktop-and-browser/ ; https://gittrend.io/weekly/2026-W43</aside>
+</section>
+
+<section class="slide" id="final" data-transition="fade" style="background:radial-gradient(circle at 80% 15%, #2B3A9E 0%, #121A33 60%);color:#F3F5FB;font-family:'Manrope', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column">
+<iframe class="embed" sandbox="allow-scripts" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;border:0" data-srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;body style=&quot;margin:0;overflow:hidden;background:transparent&quot;&gt;&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;&lt;script&gt;
+const c=document.getElementById(&#x27;c&#x27;),x=c.getContext(&#x27;2d&#x27;),R=window.devicePixelRatio||1;let W,H;
+function r(){W=c.width=innerWidth*R;H=c.height=innerHeight*R;c.style.width=innerWidth+&#x27;px&#x27;;c.style.height=innerHeight+&#x27;px&#x27;}r();addEventListener(&#x27;resize&#x27;,r);
+const N=70,P=[];for(let i=0;i&lt;N;i++)P.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0004,vy:(Math.random()-.5)*.0004,o:Math.random()&lt;.15,ph:Math.random()*6});
+function f(t){x.clearRect(0,0,W,H);const L=Math.min(W,H)*.18;
+for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x&lt;0||p.x&gt;1)p.vx*=-1;if(p.y&lt;0||p.y&gt;1)p.vy*=-1}
+for(let i=0;i&lt;N;i++)for(let j=i+1;j&lt;N;j++){const a=P[i],b=P[j],d=Math.hypot((a.x-b.x)*W,(a.y-b.y)*H);if(d&lt;L){x.strokeStyle=&#x27;rgba(159,180,255,&#x27;+((1-d/L)*.18).toFixed(3)+&#x27;)&#x27;;x.lineWidth=1.2*R;x.beginPath();x.moveTo(a.x*W,a.y*H);x.lineTo(b.x*W,b.y*H);x.stroke()}}
+for(const p of P){const k=p.o?4+2*Math.sin(t/350+p.ph):2.6;if(p.o){x.fillStyle=&#x27;rgba(255,122,26,.16)&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,k*3.5*R,0,7);x.fill()}x.fillStyle=p.o?&#x27;#FF9A4D&#x27;:&#x27;rgba(220,228,255,.55)&#x27;;x.beginPath();x.arc(p.x*W,p.y*H,k*1.2*R,0,7);x.fill()}
+requestAnimationFrame(f)}requestAnimationFrame(f);
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<p data-build-in="fade 1 auto" style="position:absolute;left:128px;top:128px;width:1200px;font-size:26px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#FFB37A">Підсумки тижня · 20–27 жовтня</p>
+<h2 data-build-in="rise 2 auto" style="position:absolute;left:128px;top:176px;width:1664px;font-size:80px;font-weight:800;line-height:1.1;letter-spacing:-2px;color:#FFFFFF">Що це означає для нас</h2>
+<div data-build-in="rise 3 auto" style="position:absolute;left:128px;top:340px;width:533px;height:450px;display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-bottom:6px solid #7C93FF;border-radius:28px;padding:40px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:64px;font-weight:700;line-height:1.05;color:#7C93FF">01</p>
+<h3 style="font-size:34px;font-weight:800;line-height:1.2;color:#FFFFFF">Агенти стають «колегами»</h3>
+<p style="font-size:26px;line-height:1.4;color:#C9D1E6">Claude Duet і конкуренти працюють у фоні: самі збирають інформацію й виконують доручення, питаючи дозволу на важливе.</p>
+</div>
+<div data-build-in="rise 4 auto" style="position:absolute;left:693px;top:340px;width:533px;height:450px;display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-bottom:6px solid #FB923C;border-radius:28px;padding:40px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:64px;font-weight:700;line-height:1.05;color:#FB923C">02</p>
+<h3 style="font-size:34px;font-weight:800;line-height:1.2;color:#FFFFFF">Безпека — пріоритет №1</h3>
+<p style="font-size:26px;line-height:1.4;color:#C9D1E6">ШІ знаходить вразливості швидше за людей, а компанії посилюють обмеження. Оновлення й захист ключів — обов’язкові.</p>
+</div>
+<div data-build-in="rise 5 auto" style="position:absolute;left:1258px;top:340px;width:534px;height:450px;display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-bottom:6px solid #3FB950;border-radius:28px;padding:40px">
+<p style="font-family:'Unbounded', Verdana, sans-serif;font-size:64px;font-weight:700;line-height:1.05;color:#3FB950">03</p>
+<h3 style="font-size:34px;font-weight:800;line-height:1.2;color:#FFFFFF">Більше вибору, нижчі ціни</h3>
+<p style="font-size:26px;line-height:1.4;color:#C9D1E6">OpenAI — у всіх великих хмарах, Kimi та DeepSeek відкривають моделі, а GitHub щотижня дає нові інструменти.</p>
+</div>
+<p data-build-in="pop 6 auto" style="position:absolute;left:128px;top:830px;width:800px;font-family:'Unbounded', Verdana, sans-serif;font-size:36px;font-weight:700;text-align:center;color:#121A33;background:#FFB37A;padding:20px 40px;border-radius:999px;box-shadow:0 12px 40px rgba(255,122,26,0.35)">Дякую! Ваші питання?</p>
+<p data-build-in="fade 7 auto" style="position:absolute;left:980px;top:846px;width:812px;font-size:26px;line-height:1.4;color:#B9C2DA">Наступний дайджест — через тиждень</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;text-align:right;color:#8E98B5">22</p>
+<aside class="notes">Три висновки тижня. Перший: ШІ-агенти переходять від чату до фонової роботи — вони самі стежать за поштою й задачами. Другий: той самий ШІ, що допомагає, прискорює і атаки, тож компанії посилюють обмеження, а базова кібергігієна — оновлення, ротація ключів — стає критичною. Третій: конкуренція зростає, моделі дешевшають, з’являється більше відкритих інструментів. Дякую за увагу — готовий відповісти на питання.</aside>
+</section>
+
+</div>
+<div id="bar"></div>
+<div id="hint">← → або пробіл — гортати · F — повний екран · N — нотатки доповідача</div>
+<div id="ui"><button id="prev">←</button><span id="count"></span><button id="next">→</button><button id="notesBtn">Нотатки</button><button id="fs">⛶ Повний екран</button></div>
+<div id="notes"></div>
+<script>
+(function(){
+const stage=document.getElementById('stage');
+const S=[...stage.querySelectorAll('.slide')];
+const N=S.length;let cur=-1,busy=false;
+const bar=document.getElementById('bar'),count=document.getElementById('count'),notes=document.getElementById('notes');
+function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='scale('+k+') translate(-50%,-50%)';stage.style.transformOrigin='0 0';stage.style.left='50%';stage.style.top='50%';stage.style.transform='translate(-50%,-50%) scale('+k+')';stage.style.transformOrigin='center center';}
+addEventListener('resize',fit);fit();
+// prepare builds
+S.forEach(s=>s.querySelectorAll('[data-build-in]').forEach(el=>{
+  const p=el.getAttribute('data-build-in').trim().split(/\s+/);
+  const type=p[0]||'fade';const ord=parseInt(p.find(x=>/^\d+$/.test(x))||'1',10);
+  el.style.animationName='b-'+type;el.style.animationDelay=(0.35+(ord-1)*0.32)+'s';
+}));
+function embeds(s,on){s.querySelectorAll('iframe.embed').forEach(f=>{if(on){if(!f.getAttribute('srcdoc'))f.setAttribute('srcdoc',f.dataset.srcdoc)}else f.removeAttribute('srcdoc')})}
+function ui(){bar.style.width=((cur+1)/N*100)+'%';count.textContent=(cur+1)+' / '+N;const a=S[cur].querySelector('.notes');notes.textContent=a?a.textContent:'';history.replaceState(null,'','#'+(cur+1));}
+function show(n,dir){
+  if(n<0||n>=N||n===cur||busy)return;
+  const next=S[n];
+  if(cur<0){cur=n;next.classList.add('active');embeds(next,true);requestAnimationFrame(()=>next.classList.add('built'));ui();return;}
+  const prev=S[cur];
+  const t=((dir>0?prev:next).dataset.transition)||'fade';
+  const kind=(t==='push')?'push':'fade';
+  busy=true;
+  next.classList.remove('built');next.classList.add('active');embeds(next,true);
+  const inC=kind==='push'?(dir>0?'t-push-in-f':'t-push-in-b'):'t-fade-in';
+  const outC=kind==='push'?(dir>0?'t-push-out-f':'t-push-out-b'):'t-fade-out';
+  void next.offsetWidth;next.classList.add(inC,'built');prev.classList.add(outC);
+  cur=n;ui();
+  setTimeout(()=>{prev.classList.remove('active','built',outC);next.classList.remove(inC);embeds(prev,false);busy=false;},720);
+}
+function go(d){show(cur+d,d)}
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(1)}
+  else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(-1)}
+  else if(e.key==='Home')show(0,-1);else if(e.key==='End')show(N-1,1);
+  else if(e.key==='f'||e.key==='F'||e.key==='а'||e.key==='А')fs();
+  else if(e.key==='n'||e.key==='N'||e.key==='т'||e.key==='Т')toggleNotes();
+});
+function fs(){if(!document.fullscreenElement)document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();else document.exitFullscreen();}
+function toggleNotes(){notes.style.display=notes.style.display==='block'?'none':'block'}
+document.getElementById('prev').onclick=e=>{e.stopPropagation();go(-1)};
+document.getElementById('next').onclick=e=>{e.stopPropagation();go(1)};
+document.getElementById('fs').onclick=e=>{e.stopPropagation();fs()};
+document.getElementById('notesBtn').onclick=e=>{e.stopPropagation();toggleNotes()};
+document.addEventListener('click',e=>{if(e.target.closest('#ui,#notes'))return;go(e.clientX>innerWidth/3?1:-1)});
+let tx=null;addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)go(dx<0?1:-1);tx=null});
+setTimeout(()=>{document.getElementById('hint').style.opacity=0},4500);
+const h=parseInt(location.hash.slice(1),10);show((h>=1&&h<=N)?h-1:0,1);
+addEventListener('hashchange',()=>{const k=parseInt(location.hash.slice(1),10);if(k>=1&&k<=N&&k-1!==cur)show(k-1,k-1>cur?1:-1)});
+})();
+</script>
+</body></html>
